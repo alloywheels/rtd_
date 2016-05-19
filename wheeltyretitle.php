@@ -1,9 +1,9 @@
 <?php
 
-//connection
+//connection LOL
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = ""; // ;D
 $dbname = "wheels";
 
 
@@ -20,7 +20,7 @@ echo "Connected successfully".'<br />';
 
 
 //query for all
-$asql = "SELECT * FROM aum_t_n_autec_17s ";
+$asql = "SELECT * FROM aum_t_n_autec_20s ";
 
 $aresult = $conn->query($asql);
 
@@ -45,6 +45,8 @@ $rimpcd = $row["PCD"];
 
 //rim colour - need separate colour function for that
 $rimcolour = $row["COLOUR"]; //for now b4 function
+
+require('colourfunction.php');
 
 
 //rim brand - from BRAND
@@ -75,7 +77,7 @@ $bestfittyre = $row["BestFitTyres"];
 
 //pretitle first
 
-$pretitlef = $rimdiameter.'" '.$rimbrand.' '.$rimmodel.' '.$rimcolour.' '.$rimwidth.'J'.' '.'ET'.$rimoffset.' '.$rimpcd.' ';
+$pretitlef = $rimdiameter.'" '.$rimbrand.' '.$rimmodel.' '.$codecolour.' '.$rimwidth.'J'.' '.'ET'.$rimoffset.' '.$rimpcd.' ';
 
 $flenght = strlen($pretitlef);
 
@@ -99,17 +101,33 @@ $lenght = strlen($pretitle);
 //echo $pretitle.'---'.$lenght.'<br />';
 //----
 
-if ($lenght >= 82){ 
+if ($lenght >= 81){ 
 
 	$title = substr($pretitle,80);
 	
-	} else {
+	} elseif (($lenght >= 75) && ($lenght <= 80)) {
+	
+	$title = $pretitlef.'FIT '.$cardet;
+	
+	} elseif (($lenght >= 73) && ($lenght <= 74)) {
+	
+	$title = $pretitlef.'FITS '.$cardet;
+	
+	} elseif (($lenght >= 75) && ($lenght <= 72)) {
+	
+	$title = $pretitlef.'& TYRES '.$cardet;
+	
+	}
+	
+	else {
 	
 	$title = $pretitlef.' '.$cardet;
 	
 	}
+	
+	$ntlen = strlen($title);
 
-	echo $title.'---'.$lenght.'<br />';
+	echo $title.'---'.$lenght.'>>>'.$ntlen.'<br />';
 
 };
 
