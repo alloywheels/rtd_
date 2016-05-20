@@ -62,8 +62,8 @@ $car = $row["CAR"];
 //car model - from MODEL
 $barecarmodel = $row["MODEL"];
 
-	$carmodel =strlen($barecarmodel - 6);
-
+	$carm = strlen($barecarmodel);
+	$carmodel = substr($barecarmodel,0,$carm - 5);
 
 	//separate age 
 	//car age - from MODEL
@@ -101,35 +101,39 @@ $lenght = strlen($pretitle);
 //echo $pretitle.'---'.$lenght.'<br />';
 //----
 
-if ($lenght >= 81){ 
+if ($lenght > 80){ 
 
-	$title = substr($pretitle,80); // 0 characters >>> 80
+	$title = substr($pretitle,0,80); // 0 characters >>> 80
 	
 	} elseif (($lenght >= 77) && ($lenght <= 80)) { // 0 characters >>> 80
 	
 	$title = $pretitle; 
 	
-	} elseif ($lenght = 76) { // 4 characters >>> 76
+	} elseif ($lenght == 76) { // 4 characters >>> 76
 	
 	$title = $pretitlef.'FIT '.$cardet; 
 	
-	} elseif ($lenght = 75) { // 5 characters >>> 75
+	} elseif (($lenght >= 69) && ($lenght <= 75)) { // 5 characters >>> 75
 	
 	$title = $pretitlef.'FITS '.$cardet;
 	
-	} elseif (($lenght >= 71) && ($lenght <= 72)) { // 8 characters >>> 72
+	} elseif (($lenght >= 67) && ($lenght <= 68)) { // 12 characters >>> 68
 	
-	$title = $pretitlef.'& TYRES '.$cardet;
+	$title = $pretitlef.'& TYRES FIT '.$cardet;
 	
-	} elseif (($lenght >= 69) && ($lenght <= 70)) { // 10 characters >>> 70
+	} elseif (($lenght >= 61) && ($lenght <= 66)) { // 14 characters >>> 66
 	
-	$title = $pretitlef.'AND TYRES '.$cardet;
+	$title = $pretitlef.'AND TYRES FIT '.$cardet;
 	
-	} elseif (($lenght >= 67) && ($lenght <= 64)) {  // 16 characters >>> 64
+	} elseif (($lenght >= 53) && ($lenght <= 60)) {  // 20 characters >>> 60
 	
-	$title = $pretitlef.$bestfittyre.' TYRES '.$cardet;
+	$title = $pretitlef.$bestfittyre.' TYRES FIT '.$cardet;
 	
-	}
+	} elseif (($lenght >= 51) && ($lenght <= 52)) {  // 28 characters >>> 52
+	
+	$title = $pretitlef.$rimpcd.' '.$bestfittyre.' TYRES FIT '.$cardet;
+	
+	}  
 	
 	else {
 	
