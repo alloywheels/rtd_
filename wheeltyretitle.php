@@ -103,19 +103,31 @@ $lenght = strlen($pretitle);
 
 if ($lenght >= 81){ 
 
-	$title = substr($pretitle,80);
+	$title = substr($pretitle,80); // 0 characters >>> 80
 	
-	} elseif (($lenght >= 75) && ($lenght <= 80)) {
+	} elseif (($lenght >= 77) && ($lenght <= 80)) { // 0 characters >>> 80
 	
-	$title = $pretitlef.'FIT '.$cardet;
+	$title = $pretitle; 
 	
-	} elseif (($lenght >= 73) && ($lenght <= 74)) {
+	} elseif ($lenght = 76) { // 4 characters >>> 76
+	
+	$title = $pretitlef.'FIT '.$cardet; 
+	
+	} elseif ($lenght = 75) { // 5 characters >>> 75
 	
 	$title = $pretitlef.'FITS '.$cardet;
 	
-	} elseif (($lenght >= 75) && ($lenght <= 72)) {
+	} elseif (($lenght >= 71) && ($lenght <= 72)) { // 8 characters >>> 72
 	
 	$title = $pretitlef.'& TYRES '.$cardet;
+	
+	} elseif (($lenght >= 69) && ($lenght <= 70)) { // 10 characters >>> 70
+	
+	$title = $pretitlef.'AND TYRES '.$cardet;
+	
+	} elseif (($lenght >= 67) && ($lenght <= 64)) {  // 16 characters >>> 64
+	
+	$title = $pretitlef.$bestfittyre.' TYRES '.$cardet;
 	
 	}
 	
