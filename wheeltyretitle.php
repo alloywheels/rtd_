@@ -129,11 +129,23 @@ if ($lenght > 80){
 	
 	$title = $pretitlef.$bestfittyre.' TYRES FIT '.$cardet;
 	
-	} elseif (($lenght >= 51) && ($lenght <= 52)) {  // 28 characters >>> 52
+	} elseif (($lenght >= 48) && ($lenght <= 52)) {  // 28 characters >>> 52
 	
-	$title = $pretitlef.$rimpcd.' '.$bestfittyre.' TYRES FIT '.$cardet;
+	$title = $pretitlef.'AND '.$bestfittyre.' TYRES FIT '.$cardet;
 	
-	}  
+	} elseif (($lenght >= 44) && ($lenght <= 47)) {  // 33 characters >>> 47
+	
+	$title = $pretitlef.' RIMS AND'.$bestfittyre.' TYRES FIT '.$cardet;
+	
+	} elseif (($lenght >= 42) && ($lenght <= 43)) {  // 37 characters >>> 43
+	
+	$title = $pretitlef.' WHEELS AND '.$bestfittyre.' TYRES FIT '.$cardet;
+	
+	} elseif (($lenght >= 20) && ($lenght <= 41)) {  // 39 characters >>> 41
+	
+	$title = $pretitlef.'ALLOY WHEELS AND '.$bestfittyre.' TYRES FIT '.$cardet;
+	
+	} 
 	
 	else {
 	
