@@ -20,7 +20,7 @@ echo "Connected successfully".'<br />';
 
 
 //query for all
-$asql = "SELECT * FROM aum_t_n_diewew_15_19_20_22 ";
+$asql = "SELECT * FROM mom_t_nankang ";
 
 $aresult = $conn->query($asql);
 
